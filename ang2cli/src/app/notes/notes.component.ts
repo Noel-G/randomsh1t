@@ -10,7 +10,6 @@ export class NotesComponent implements OnInit {
   constructor() { }
 
   ngOnInit() {
-    console.log('notes component!');
   }
 
 }
