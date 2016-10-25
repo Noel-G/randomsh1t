@@ -1,5 +1,4 @@
 import { Component } from '@angular/core';
-import { StocksComponent } from './stocks.component';
 import { NotesComponent } from './notes/notes.component';
 
 @Component({
@@ -9,4 +8,5 @@ import { NotesComponent } from './notes/notes.component';
 })
 export class AppComponent {
   title = 'My first angular2 app';
+  today = new Date();
 }

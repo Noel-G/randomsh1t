@@ -2,8 +2,14 @@
   {{title}}
 </h1>
 
+{{today | date: "dd/MMM/yyyy hh:mm a"}}
+
+
+
 <app-notes></app-notes>
 
-<stocks></stocks>
-
 <p myHighlight>Highlighted paragraph using the myHighlight directive</p>
+
+<a routerLink="/stocks">STOCKS</a>
+
+<router-outlet></router-outlet>
