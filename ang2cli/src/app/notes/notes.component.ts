@@ -29,6 +29,11 @@ export class NotesComponent implements OnInit {
       then in @NgModule providers
     `;
 
+    const modulesNotes = `
+      Angular2 apps are modular. Every app has at least one NgModule.
+      In the @NgModule decorator we declare our declarations, imports, providers and bootstrap
+    `;
+
     const otherNotes = `
       "providers" provide data for Components (declared in "declarations")
       pipes are angular's filters. create them with ng g pipe nameOfPipe.
