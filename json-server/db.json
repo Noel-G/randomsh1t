@@ -20,5 +20,17 @@
       "name": "Hewlett Packard",
       "id": 4
     }
+  ],
+  "links": [
+    {
+      "id": 1,
+      "url": "http://google.fr",
+      "description": "Google search engine"
+    },
+    {
+      "url": "http://facebook.com",
+      "description": "Facebook social network",
+      "id": 2
+    }
   ]
 }
