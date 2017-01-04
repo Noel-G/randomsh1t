@@ -1,0 +1,11 @@
+{
+  "name": "links",
+  "version": "0.0.1",
+  "description": "saving links to read them later",
+  "main": "app.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "G",
+  "license": "ISC"
+}
