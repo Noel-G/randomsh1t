@@ -1,0 +1,68 @@
+{
+  "categories": [
+    {
+      "id": 1,
+      "name": "Javascript"
+    },
+    {
+      "id": 2,
+      "name": "CSS"
+    }
+  ],
+  "links": [
+    {
+      "id": 1,
+      "title": "Functional JS - mostly-adequate-guide",
+      "url": "https://drboolean.gitbooks.io/mostly-adequate-guide/content/",
+      "category_id": 1
+    },
+    {
+      "id": 2,
+      "title": "Skeleton: Responsive CSS Boilerplate",
+      "url": "http://getskeleton.com/",
+      "category_id": 2
+    },
+    {
+      "id": 3,
+      "title": "Building Front-End Web Apps with Plain JavaScript",
+      "url": "https://oxygen.informatik.tu-cottbus.de/webeng/JsFrontendApp/book/",
+      "category_id": 1
+    },
+    {
+      "id": 4,
+      "title": "16 JavaScript Concepts JavaScript Professionals Must Know Well",
+      "url": "http://javascriptissexy.com/16-javascript-concepts-you-must-know-well/",
+      "category_id": 1
+    },
+    {
+      "title": "Node.js Best Practices - How to Become a Better Developer in 2017",
+      "url": "https://blog.risingstack.com/node-js-best-practices-2017/",
+      "category_id": 1,
+      "id": 5
+    },
+    {
+      "title": "Idiomatic JS Styleguide",
+      "url": "https://github.com/rwaldron/idiomatic.js",
+      "category_id": 1,
+      "id": 6
+    },
+    {
+      "title": "Google JS Styleguide",
+      "url": "https://google.github.io/styleguide/javascriptguide.xml",
+      "category_id": 1,
+      "id": 7
+    },
+    {
+      "title": "JavaScript Cheat Sheet",
+      "url": "https://www.cheatography.com/davechild/cheat-sheets/javascript/",
+      "category_id": 1,
+      "id": 8
+    },
+    {
+      "title": "express-es6-rest-api",
+      "url": "https://github.com/developit/express-es6-rest-api/blob/master/src/api/facets.js",
+      "category_id": 1,
+      "id": 9
+    }
+  ]
+}
