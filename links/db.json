@@ -69,6 +69,90 @@
       "url": "https://www.gitbook.com/book/frontendmasters/front-end-handbook-2017/details",
       "category_id": 1,
       "id": 10
+    },
+    {
+      "title": "Get Started with Debugging JavaScript in Chrome DevTools",
+      "url": "https://developers.google.com/web/tools/chrome-devtools/javascript/?utm_source=javascriptweekly&utm_medium=email",
+      "category_id": 1,
+      "id": 11
+    },
+    {
+      "title": "Module Bundling and Webpack in Simple Terms",
+      "url": "http://arianv.com/post/Module-Bundling-and-Webpack-in-Simple-Terms/?utm_source=javascriptweekly&utm_medium=email",
+      "category_id": 1,
+      "id": 12
+    },
+    {
+      "title": "Vue + Vuex — Getting started",
+      "url": "https://medium.com/@bradfmd/vue-vuex-getting-started-f78c03d9f65#.7iq4m1q7g",
+      "category_id": 1,
+      "id": 13
+    },
+    {
+      "title": "JavaScript Array Methods: Mutating vs. Non-Mutating",
+      "url": "http://lorenstewart.me/2017/01/22/javascript-array-methods-mutating-vs-non-mutating/?utm_source=javascriptweekly&utm_medium=email",
+      "category_id": 1,
+      "id": 14
+    },
+    {
+      "title": "Getting Started with Vue.js 2.0 in 2017 for Beginners",
+      "url": "https://www.youtube.com/watch?v=NT3OxvS7McU",
+      "category_id": 1,
+      "id": 15
+    },
+    {
+      "title": "Exploring ES2016 and ES2017",
+      "url": "http://exploringjs.com/es2016-es2017/index.html?utm_source=javascriptweekly&utm_medium=email",
+      "category_id": 1,
+      "id": 16
+    },
+    {
+      "title": "Build, test and deploy your Vue.js app easily with Gitlab",
+      "url": "http://vuetips.com/introduction-continuous-integration-gitlab?utm_source=javascriptweekly&utm_medium=email",
+      "category_id": 1,
+      "id": 17
+    },
+    {
+      "title": "What You Should Know About Numbers in ES6 JavaScript",
+      "url": "https://hackernoon.com/what-you-should-know-about-numbers-in-es6-javascript-7370be6b3469#.tvg702xwh",
+      "category_id": 1,
+      "id": 18
+    },
+    {
+      "title": "What You Should Know About ES6 Maps",
+      "url": "https://hackernoon.com/what-you-should-know-about-es6-maps-dc66af6b9a1e#.orzkfy24m",
+      "category_id": 1,
+      "id": 19
+    },
+    {
+      "title": "A Detailed Introduction To Webpack",
+      "url": "https://www.smashingmagazine.com/2017/02/a-detailed-introduction-to-webpack/?utm_source=javascriptweekly&utm_medium=email",
+      "category_id": 1,
+      "id": 20
+    },
+    {
+      "title": "Quick Tip: How to Sort an Array of Objects in JavaScript",
+      "url": "https://www.sitepoint.com/sort-an-array-of-objects-in-javascript/?utm_source=javascriptweekly&utm_medium=email",
+      "category_id": 1,
+      "id": 21
+    },
+    {
+      "title": "Improve Your JavaScript Learning with Fun Experiments",
+      "url": "https://www.sitepoint.com/improve-javascript-learning-experiments/?utm_source=sitepoint&utm_medium=relatedsidebar&utm_term=javascript",
+      "category_id": 1,
+      "id": 22
+    },
+    {
+      "title": "Build, test and deploy your Vue.js app easily with Gitlab",
+      "url": "http://vuetips.com/introduction-continuous-integration-gitlab?utm_source=javascriptweekly&utm_medium=email",
+      "category_id": 1,
+      "id": 23
+    },
+    {
+      "title": "Frameworks to make Mobile Apps with Vuejs",
+      "url": "https://alligator.io/vuejs/roundup-mobile-hybrid-frameworks/?utm_source=javascriptweekly&utm_medium=email",
+      "category_id": 1,
+      "id": 24
     }
   ]
 }
