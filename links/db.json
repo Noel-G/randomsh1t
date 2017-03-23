@@ -143,16 +143,10 @@
       "id": 22
     },
     {
-      "title": "Build, test and deploy your Vue.js app easily with Gitlab",
-      "url": "http://vuetips.com/introduction-continuous-integration-gitlab?utm_source=javascriptweekly&utm_medium=email",
-      "category_id": 1,
-      "id": 23
-    },
-    {
       "title": "Frameworks to make Mobile Apps with Vuejs",
       "url": "https://alligator.io/vuejs/roundup-mobile-hybrid-frameworks/?utm_source=javascriptweekly&utm_medium=email",
       "category_id": 1,
-      "id": 24
+      "id": 23
     }
   ]
 }
