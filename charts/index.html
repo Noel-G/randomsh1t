@@ -8,13 +8,24 @@
 	<style>
 		body { padding-top:50px; }
 	</style>
+
+	<script src="vue.js"></script>
+	<script src="client.js"></script>
 </head>
 <body class="container">
-<script src="client.js"></script>
+
 	<div class="jumbotron">
 		<h1>My App!</h1>
 	</div>
 
-	<div id="msg"></div>
+	<div id="msg">
+		<ul>
+			<li v-for="msg in messages">
+				{{ msg.content }}
+			</li>
+		</ul>
+	</div>
+
+	
 </body>
 </html>

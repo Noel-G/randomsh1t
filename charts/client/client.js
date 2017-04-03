@@ -1,17 +1,31 @@
-var getMessage = new XMLHttpRequest();
-var messageElement;
-var prettyMessage;
 
-getMessage.onreadystatechange = function() {
-	if(getMessage.readyState != 4 || getMessage.status != 200) return;
-	console.log('Success: ' + getMessage.response);
-	console.log(getMessage);
 
-	prettyMessage = JSON.parse(getMessage.response);
-	messageElement = document.getElementById('msg');
-	messageElement.innerHTML = "Message: " + prettyMessage[0].content;
+window.onload = function() {
 
-}
+	var getMessage = new XMLHttpRequest();
+	var messageElement;
+	var prettyMessage;
 
-getMessage.open('GET', 'http://localhost:1337/msg', true);
-getMessage.send(null);
+	getMessage.onreadystatechange = function() {
+		if(getMessage.readyState != 4 || getMessage.status != 200) return;
+		console.log('Success: ' + getMessage.response);
+		console.log(getMessage);
+
+		prettyMessage = JSON.parse(getMessage.response);
+
+		var app = new Vue({
+			el: "#msg",
+			data: function() {
+				return {
+					messages: prettyMessage
+				}
+			}
+		});
+
+	}
+
+	getMessage.open('GET', 'http://localhost:1337/msg', true);
+	getMessage.send(null);
+};
+
+
