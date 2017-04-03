@@ -9,7 +9,7 @@ getMessage.onreadystatechange = function() {
 
 	prettyMessage = JSON.parse(getMessage.response);
 	messageElement = document.getElementById('msg');
-	messageElement.innerHTML = "Message: " + prettyMessage.message;
+	messageElement.innerHTML = "Message: " + prettyMessage[0].content;
 
 }
 
