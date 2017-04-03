@@ -26,7 +26,7 @@
 
 		<div id="msg" class="column">
 			<ul>
-				<li v-for="msg in messages" v-bind:class="{ italic: msg.content == 'first message!' }">
+				<li v-cloak v-for="msg in messages" v-bind:class="{ italic: msg.content == 'first message!' }">
 					{{ msg.content }}
 				</li>
 			</ul>

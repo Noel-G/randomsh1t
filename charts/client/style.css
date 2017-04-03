@@ -6,3 +6,7 @@ body {
 .italic {
 	font-style: italic;
 }
+
+[v-cloak] {
+  display: none;
+}
