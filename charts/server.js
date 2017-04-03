@@ -29,7 +29,5 @@ app.get('/msg', function(req, res) {
 
 
 //connection.end();
-
 app.listen(1337);
-
 console.log('Server running on port 1337');
