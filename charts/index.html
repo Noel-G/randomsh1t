@@ -5,6 +5,7 @@
 	<title>My Node App!</title>
 	<!-- CSS -->
 	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" />
+	<link rel="stylesheet" href="style.css" />
 	<style>
 		body { padding-top:50px; }
 	</style>
@@ -20,7 +21,7 @@
 
 	<div id="msg">
 		<ul>
-			<li v-for="msg in messages">
+			<li v-for="msg in messages" v-bind:class="{ italic: msg.content == 'first message!' }">
 				{{ msg.content }}
 			</li>
 		</ul>
