@@ -4,26 +4,33 @@
 	<meta charset="UTF-8">
 	<title>Charts</title>
 	<!-- CSS -->
-	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" />
+	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bulma/0.4.0/css/bulma.css" />
+	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
 	<link rel="stylesheet" href="style.css" />
 
 	<!-- JS -->
 	<script src="vue.js"></script>
 	<script src="client.js"></script>
 </head>
-<body class="container">
+<body>
 
-	<div class="jumbotron">
-		<h1>My Charts App!</h1>
+	<div class="columns is-mobile">
+		<div class="column">
+			<h1 class="title is-2">My Charts App!</h1>
+		</div>
+	</div>
+	<div class="columns is-mobile">
+
+		<div id="msg" class="column">
+			<ul>
+				<li v-for="msg in messages" v-bind:class="{ italic: msg.content == 'first message!' }">
+					{{ msg.content }}
+				</li>
+			</ul>
+		</div>
 	</div>
 
-	<div id="msg">
-		<ul>
-			<li v-for="msg in messages" v-bind:class="{ italic: msg.content == 'first message!' }">
-				{{ msg.content }}
-			</li>
-		</ul>
-	</div>
+	
 	
 </body>
 </html>
