@@ -11,13 +11,21 @@ window.onload = function() {
 
 		var app = new Vue({
 			el: "#msg",
-			data: function() {
-				return {
-					messages: prettyMessage
-				}
-			}
+			data: { messages: prettyMessage }
 		});
 	}
+	
+
+	var app2 = new Vue({
+		el: "#userinput",
+		data: { text : "hello" },
+		methods: {
+			toUpper: function() {
+				this.text = this.text.toUpperCase()
+			}
+		}
+	})
+
 
 	getMessage.open('GET', 'http://localhost:1337/msg', true);
 	getMessage.send(null);

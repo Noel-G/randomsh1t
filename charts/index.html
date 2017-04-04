@@ -22,14 +22,22 @@
 			<h1 class="title is-2 main-title">My Charts App!</h1>
 		</div>
 	</div>
-	<div class="columns is-mobile">
 
+	<div class="columns is-mobile">
 		<div id="msg" class="column">
 			<ul>
 				<li v-cloak v-for="msg in messages" v-bind:class="{ italic: msg.content == 'first message!' }">
 					{{ msg.content }}
 				</li>
 			</ul>
+		</div>
+	</div>
+
+	<div class="columns is-mobile">
+		<div id="userinput" class="column">
+			<p>{{ text }}</p>
+			<button v-on:click="toUpper">Click!</button>
+			<input v-model="text">
 		</div>
 	</div>
 
