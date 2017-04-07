@@ -32,7 +32,7 @@ window.onload = function() {
 
 	})
 
-	new Vue({
+	var vm = new Vue({
 		el: "#phones",
 		data: {
 			phonesList : [
@@ -41,6 +41,16 @@ window.onload = function() {
 			]
 		}
 	})
+
+	window.vm = vm;
+
+	/*
+		Une instance Vue est un ViewModel
+		qui prend en param un objet d'options
+		
+		On peut créer des composants constructors 
+		et les étendre
+	*/
 
 	getMessage.open('GET', 'http://localhost:1337/msg', true);
 	getMessage.send(null);
