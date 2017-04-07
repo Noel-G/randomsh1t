@@ -26,6 +26,21 @@ window.onload = function() {
 		}
 	})
 
+	Vue.component('phones-list', {
+		props: ['phone'],
+		template: '<li>{{ phone.name }}</li>'
+
+	})
+
+	new Vue({
+		el: "#phones",
+		data: {
+			phonesList : [
+				{name: 'iPhone 7'},
+				{name: 'Galaxy S8'}
+			]
+		}
+	})
 
 	getMessage.open('GET', 'http://localhost:1337/msg', true);
 	getMessage.send(null);

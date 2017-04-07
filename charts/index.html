@@ -41,7 +41,14 @@
 		</div>
 	</div>
 
-	
+	<div class="columns is-mobile">
+		<div id="phones" class="column">
+			<ul>
+			<phones-list v-for="phone in phonesList" v-bind:phone="phone"></phones-list>
+			</ul>
+		</div>
+	</div>
+
 	
 </body>
 </html>
