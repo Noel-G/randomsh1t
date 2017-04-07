@@ -1,20 +1,26 @@
 window.onload = function() {
 
-	var getMessage = new XMLHttpRequest();
-	var messageElement;
-	var prettyMessage;
+	var app = new Vue({
+		el: "#msg",
+		data: { messages: [] }
+	});
 
-	getMessage.onreadystatechange = function() {
-		if(getMessage.readyState != 4 || getMessage.status != 200) return;
-		
-		prettyMessage = JSON.parse(getMessage.response);
+	var url = 'http://localhost:1337/msg';
 
-		var app = new Vue({
-			el: "#msg",
-			data: { messages: prettyMessage }
-		});
+	function refreshMessages() {
+		Vue.http.get(url).then(res => {
+			app.messages = res.body;
+		}, err => {
+			console.log(err);
+		})
 	}
-	
+
+	refreshMessages();
+
+	setInterval(function() {
+		refreshMessages();
+	}, 10000);
+
 
 	var app2 = new Vue({
 		el: "#userinput",
@@ -36,8 +42,8 @@ window.onload = function() {
 		el: "#phones",
 		data: {
 			phonesList : [
-				{name: 'iPhone 7'},
-				{name: 'Galaxy S8'}
+			{name: 'iPhone 7'},
+			{name: 'Galaxy S8'}
 			]
 		}
 	})
@@ -50,8 +56,5 @@ window.onload = function() {
 		
 		On peut créer des composants constructors 
 		et les étendre
-	*/
-
-	getMessage.open('GET', 'http://localhost:1337/msg', true);
-	getMessage.send(null);
-};
+		*/
+	};
