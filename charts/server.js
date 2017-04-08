@@ -32,7 +32,7 @@ router.route('/messages')
 		console.log('POST /messages ', req.body);
 
 		sqlConnection
-		.query(`INSERT INTO messages (content) VALUES ('`+req.body.content+`');`, (error, results, fields) => {
+		.query(`INSERT INTO messages (content) VALUES ('${req.body.content}');`, (error, results, fields) => {
 			if (error) throw error;
 			res.json({ message: 'Message added!' });
 		})
@@ -52,7 +52,7 @@ router.route('/messages/:message_id')
 .put((req, res) => {
 	console.log('PUT /messages ', req.params.message_id);
 	sqlConnection
-	.query(`UPDATE messages SET content='`+ req.body.content + `'WHERE id = '` + req.params.message_id +`'`, 
+	.query(`UPDATE messages SET content=' ${req.body.content} 'WHERE id = ' ${req.params.message_id} '`, 
 		(error, results, fields) => {
 		if (error) throw error;
 		res.json({message: 'Message updated!'})
@@ -61,9 +61,9 @@ router.route('/messages/:message_id')
 
 router.route('/messages/:message_id')
 .delete((req, res) => {
-	console.log('DELETE /messages ', req.params.message_id);
+	console.log(`DELETE /messages ${req.params.message_id}`);
 	sqlConnection
-	.query(`DELETE FROM messages WHERE id = '` + req.params.message_id +`'`, 
+	.query(`DELETE FROM messages WHERE id = ' ${req.params.message_id} '`, 
 		(error, results, fields) => {
 		if (error) throw error;
 		res.json({message: 'Message deleted!'})
@@ -73,4 +73,4 @@ router.route('/messages/:message_id')
 
 //connection.end();
 app.listen(port);
-console.log('Server running on port ' + port);
+console.log(`Server running on port  + ${port}`);
