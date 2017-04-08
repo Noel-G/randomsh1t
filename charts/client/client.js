@@ -5,10 +5,10 @@ window.onload = function() {
 		data: { messages: [] }
 	});
 
-	const url = 'http://localhost:1337/msg';
+	const getMsgUrl = 'http://localhost:1337/api/messages';
 
 	function refreshMessages() {
-		Vue.http.get(url).then(res => {
+		Vue.http.get(getMsgUrl).then(res => {
 			app.messages = res.body;
 		}, err => {
 			console.log(err);
@@ -19,7 +19,7 @@ window.onload = function() {
 
 	setInterval(function() {
 		refreshMessages();
-	}, 10000);
+	}, 600000);
 
 
 	const app2 = new Vue({
@@ -65,4 +65,7 @@ window.onload = function() {
 	// v-on shortcut -> @
 
 	// v-if, v-else, v-else-if
+	// v-if sur un ensemble de balises : <template v-if="..."> [...] </template>
+
+	// idem pour v-for
 };

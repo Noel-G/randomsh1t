@@ -1,33 +1,54 @@
-var express = require('express');
-var mysql = require('mysql');
+const express		= require('express');
+const app			= express();
+const mysql			= require('mysql');
+const bodyParser 	= require('body-parser');
 
-var app = express();
+app.use(express.static(__dirname + '/client'));
+app.use(bodyParser.urlencoded({extended: true}));
+app.use(bodyParser.json());
 
-var connection = mysql.createConnection({
+const port = 1337;
+const router = express.Router();
+
+const sqlConnection = mysql.createConnection({
   host     : 'localhost',
   user     : 'guillaume',
   database : 'charts'
 });
 
-app.use(express.static(__dirname + '/client'));
-
-connection.connect();
+sqlConnection.connect();
 
 app.get('/', function(req, res) {
 	res.sendFile(__dirname + '/index.html');
 });
 
-app.get('/msg', function(req, res) {
-	connection.
-	query('SELECT * FROM messages', function (error, results, fields) {
-  		if (error) throw error;
-  		console.log('The solution is: ', results);
-		res.json(results);
-	});
 
-});
+// all routes will be prefixed with /api
+app.use('/api', router);
+
+router.route('/messages')
+	.post(function(req, res) {
+		//res.json(req, res);
+		console.log('POST /messages ', req.body);
+
+		sqlConnection
+			.query(`INSERT INTO messages (content) VALUES ('`+req.body.content+`');`, function(error, results, fields) {
+  				if (error) throw error;
+				res.json({ message: 'POST /messages SUCCESS' });
+			})
+
+	})
+
+	.get(function(req, res) {
+		sqlConnection
+			.query('SELECT * FROM messages', function (error, results, fields) {
+  				if (error) throw error;
+  				console.log('GET /messages');
+				res.json(results);
+		})
+	});
 
 
 //connection.end();
-app.listen(1337);
-console.log('Server running on port 1337');
+app.listen(port);
+console.log('Server running on port ' + port);
