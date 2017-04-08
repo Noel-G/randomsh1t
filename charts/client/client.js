@@ -63,4 +63,6 @@ window.onload = function() {
 
 	// v-bind shortcut -> :
 	// v-on shortcut -> @
+
+	// v-if, v-else, v-else-if
 };
