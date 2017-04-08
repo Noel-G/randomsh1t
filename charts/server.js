@@ -11,9 +11,9 @@ const port = 1337;
 const router = express.Router();
 
 const sqlConnection = mysql.createConnection({
-  host     : 'localhost',
-  user     : 'guillaume',
-  database : 'charts'
+	host     : 'localhost',
+	user     : 'guillaume',
+	database : 'charts'
 });
 
 sqlConnection.connect();
@@ -27,27 +27,37 @@ app.get('/', function(req, res) {
 app.use('/api', router);
 
 router.route('/messages')
-	.post(function(req, res) {
+.post((req, res) => {
 		//res.json(req, res);
 		console.log('POST /messages ', req.body);
 
 		sqlConnection
-			.query(`INSERT INTO messages (content) VALUES ('`+req.body.content+`');`, function(error, results, fields) {
-  				if (error) throw error;
-				res.json({ message: 'POST /messages SUCCESS' });
-			})
-
+		.query(`INSERT INTO messages (content) VALUES ('`+req.body.content+`');`, (error, results, fields) => {
+			if (error) throw error;
+			res.json({ message: 'Message added!' });
+		})
 	})
 
-	.get(function(req, res) {
-		sqlConnection
-			.query('SELECT * FROM messages', function (error, results, fields) {
-  				if (error) throw error;
-  				console.log('GET /messages');
-				res.json(results);
-		})
-	});
+.get((req, res) => {
+	sqlConnection
+	.query('SELECT * FROM messages', (error, results, fields) => {
+		if (error) throw error;
+		console.log('GET /messages');
+		res.json(results);
+	})
+})
 
+
+router.route('/messages/:message_id')
+.put((req, res) => {
+	console.log('PUT /messages ', req.params.message_id);
+	sqlConnection
+	.query(`UPDATE messages SET content='`+ req.body.content + `'WHERE id = '` + req.params.message_id +`'`, 
+		(error, results, fields) => {
+		if (error) throw error;
+		res.json({message: 'Message updated!'})
+	})
+})
 
 //connection.end();
 app.listen(port);
