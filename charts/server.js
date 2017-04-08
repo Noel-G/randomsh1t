@@ -59,6 +59,18 @@ router.route('/messages/:message_id')
 	})
 })
 
+router.route('/messages/:message_id')
+.delete((req, res) => {
+	console.log('DELETE /messages ', req.params.message_id);
+	sqlConnection
+	.query(`DELETE FROM messages WHERE id = '` + req.params.message_id +`'`, 
+		(error, results, fields) => {
+		if (error) throw error;
+		res.json({message: 'Message deleted!'})
+	})
+})
+
+
 //connection.end();
 app.listen(port);
 console.log('Server running on port ' + port);
