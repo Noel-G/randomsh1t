@@ -1,11 +1,11 @@
 window.onload = function() {
 
-	var app = new Vue({
+	const app = new Vue({
 		el: "#msg",
 		data: { messages: [] }
 	});
 
-	var url = 'http://localhost:1337/msg';
+	const url = 'http://localhost:1337/msg';
 
 	function refreshMessages() {
 		Vue.http.get(url).then(res => {
@@ -22,7 +22,7 @@ window.onload = function() {
 	}, 10000);
 
 
-	var app2 = new Vue({
+	const app2 = new Vue({
 		el: "#userinput",
 		data: { text : "hello" },
 		methods: {
@@ -38,7 +38,7 @@ window.onload = function() {
 
 	})
 
-	var vm = new Vue({
+	const vm = new Vue({
 		el: "#phones",
 		data: {
 			phonesList : [
@@ -56,5 +56,11 @@ window.onload = function() {
 		
 		On peut créer des composants constructors 
 		et les étendre
-		*/
-	};
+	*/
+
+	// cool stuff:
+	// vm.$el, vm.$data, vm.$watch
+
+	// v-bind shortcut -> :
+	// v-on shortcut -> @
+};
