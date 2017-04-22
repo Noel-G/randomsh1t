@@ -28,7 +28,7 @@
 		<div id="msg" class="column">
 			<ul>
 				<li v-cloak v-for="msg in messages" :class="{ italic: msg.id === 1 }" :key="msg.id">
-					{{ msg.content }}
+					<span @click="deleteMessage(msg.id)" class="x">X</span> {{ msg.content }}
 				</li>
 			</ul>
 			<div>

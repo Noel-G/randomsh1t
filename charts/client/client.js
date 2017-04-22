@@ -7,16 +7,29 @@ window.onload = function() {
 		data: { 
 			messages: [],
 			new_message: ""
-		 },
-		 methods: {
-		 	sendMessage: function() {
-		 		Vue.http.post(messagesUrl, {content: app.new_message}).then(res => {
-		 			app.messages.push(res.body);
-		 		}, err => {
-		 			console.log(err);
-		 		})
-		 	}
-		 }
+		},
+		methods: {
+			sendMessage: function() {
+				if(app.new_message != "") {
+					Vue.http.post(messagesUrl, {content: app.new_message}).then(res => {
+						app.new_message = "";
+						app.messages.push(res.body);
+					}, err => {
+						console.log(err);
+					})
+				}
+
+			},
+			deleteMessage: function(id) {
+				Vue.http.delete(messagesUrl + '/' + id).then(res => {
+					app.messages = app.messages.filter(function(msg) {
+						return msg.id != id
+					});
+				}, err => {
+					console.log(err);
+				})
+			}
+		}
 	});
 
 
@@ -69,7 +82,7 @@ window.onload = function() {
 		
 		On peut créer des composants constructors 
 		et les étendre
-	*/
+		*/
 
 	// cool stuff:
 	// vm.$el, vm.$data, vm.$watch
