@@ -10,10 +10,10 @@ window.onload = function() {
 		},
 		methods: {
 			sendMessage: function() {
-				if(app.new_message != "") {
-					Vue.http.post(messagesUrl, {content: app.new_message}).then(res => {
-						app.new_message = "";
-						app.messages.push(res.body);
+				if(this.new_message != "") {
+					this.$http.post(messagesUrl, {content: this.new_message}).then(res => {
+						this.new_message = "";
+						this.messages.push(res.body);
 					}, err => {
 						console.log(err);
 					})
@@ -22,7 +22,7 @@ window.onload = function() {
 			},
 			deleteMessage: function(id) {
 				Vue.http.delete(messagesUrl + '/' + id).then(res => {
-					app.messages = app.messages.filter(function(msg) {
+					this.messages = this.messages.filter(function(msg) {
 						return msg.id != id
 					});
 				}, err => {
