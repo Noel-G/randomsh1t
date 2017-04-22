@@ -27,10 +27,15 @@
 	<div class="columns is-mobile">
 		<div id="msg" class="column">
 			<ul>
-				<li v-cloak v-for="msg in messages" :class="{ italic: msg.content == 'first message!' }">
+				<li v-cloak v-for="msg in messages" :class="{ italic: msg.id === 1 }" :key="msg.id">
 					{{ msg.content }}
 				</li>
 			</ul>
+			<div>
+				<p><label for="newMsg">New message:</label> <input type="text" id="newMsg" v-model="new_message" />
+					<button @click="sendMessage">Send new message</button>
+				</p>
+			</div>
 		</div>
 	</div>
 

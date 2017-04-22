@@ -34,13 +34,15 @@ router.route('/messages')
 		sqlConnection
 		.query(`INSERT INTO messages (content) VALUES ('${req.body.content}');`, (error, results, fields) => {
 			if (error) throw error;
-			res.json({ message: 'Message added!' });
+			console.log(results);
+			console.log(fields);
+			res.json({ id: results.insertId, content: req.body.content });
 		})
 	})
 
 .get((req, res) => {
 	sqlConnection
-	.query('SELECT * FROM messages', (error, results, fields) => {
+	.query('SELECT * FROM messages ORDER by id ASC', (error, results, fields) => {
 		if (error) throw error;
 		console.log('GET /messages');
 		res.json(results);
@@ -73,4 +75,4 @@ router.route('/messages/:message_id')
 
 //connection.end();
 app.listen(port);
-console.log(`Server running on port  + ${port}`);
+console.log(`Server running on port ${port}`);

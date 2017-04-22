@@ -1,14 +1,27 @@
 window.onload = function() {
 
+	const messagesUrl = 'http://localhost:1337/api/messages';
+
 	const app = new Vue({
 		el: "#msg",
-		data: { messages: [] }
+		data: { 
+			messages: [],
+			new_message: ""
+		 },
+		 methods: {
+		 	sendMessage: function() {
+		 		Vue.http.post(messagesUrl, {content: app.new_message}).then(res => {
+		 			app.messages.push(res.body);
+		 		}, err => {
+		 			console.log(err);
+		 		})
+		 	}
+		 }
 	});
 
-	const getMsgUrl = 'http://localhost:1337/api/messages';
 
 	function refreshMessages() {
-		Vue.http.get(getMsgUrl).then(res => {
+		Vue.http.get(messagesUrl).then(res => {
 			app.messages = res.body;
 		}, err => {
 			console.log(err);
