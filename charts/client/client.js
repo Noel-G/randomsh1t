@@ -6,14 +6,17 @@ window.onload = function() {
 		el: "#msg",
 		data: { 
 			messages: [],
-			new_message: ""
+			new_message: "",
+			btnAvailable: true
 		},
 		methods: {
 			sendMessage: function() {
-				if(this.new_message != "") {
+				if(this.btnAvailable && this.new_message != "") {
+					this.btnAvailable = false;
 					this.$http.post(messagesUrl, {content: this.new_message}).then(res => {
 						this.new_message = "";
 						this.messages.push(res.body);
+						this.btnAvailable = true;
 					}, err => {
 						console.log(err);
 					})

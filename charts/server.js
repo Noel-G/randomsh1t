@@ -34,8 +34,6 @@ router.route('/messages')
 		sqlConnection
 		.query(`INSERT INTO messages (content) VALUES ('${req.body.content}');`, (error, results, fields) => {
 			if (error) throw error;
-			console.log(results);
-			console.log(fields);
 			res.json({ id: results.insertId, content: req.body.content });
 		})
 	})
