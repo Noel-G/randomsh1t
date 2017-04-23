@@ -40,14 +40,6 @@
 	</div>
 
 	<div class="columns is-mobile">
-		<div id="userinput" class="column">
-			<p>{{ text }}</p>
-			<button @click="toUpper">Click!</button>
-			<input v-model="text">
-		</div>
-	</div>
-
-	<div class="columns is-mobile">
 		<div id="phones" class="column">
 			<ul>
 			<phones-list v-for="phone in phonesList" :phone="phone"></phones-list>

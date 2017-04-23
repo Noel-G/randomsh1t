@@ -50,22 +50,11 @@ window.onload = function() {
 		refreshMessages();
 	}, 600000);
 
-
-	const app2 = new Vue({
-		el: "#userinput",
-		data: { text : "hello" },
-		methods: {
-			toUpper: function() {
-				this.text = this.text.toUpperCase()
-			}
-		}
-	})
-
 	Vue.component('phones-list', {
 		props: ['phone'],
 		template: '<li>{{ phone.name }}</li>'
 
-	})
+	});
 
 	const vm = new Vue({
 		el: "#phones",
@@ -75,7 +64,7 @@ window.onload = function() {
 			{name: 'Galaxy S8'}
 			]
 		}
-	})
+	});
 
 	window.vm = vm;
 
